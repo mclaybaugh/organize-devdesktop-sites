@@ -40,7 +40,7 @@ function swap(items, i, j) {
   items[j] = temp;
 }
 function partition(items, i, j) {
-  let pivot   = items[Math.floor((j + i) / 2)];
+  let pivot = items[Math.floor((j + i) / 2)];
   while (i <= j) {
     while (items[i].name[0].localeCompare(pivot.name) < 0) {
       i++;
@@ -67,5 +67,4 @@ function quicksort(items, left, right) {
       quicksort(items, index, right);
     }
   }
-  return items;
 }
