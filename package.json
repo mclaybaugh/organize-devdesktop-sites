@@ -1,0 +1,21 @@
+{
+  "name": "organize-devdesktop-sites",
+  "version": "1.0.0",
+  "description": "Alpabetize items in XML file",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mclaybaugh",
+  "license": "MIT",
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-plugin-node": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=12.9.1"
+  }
+}
