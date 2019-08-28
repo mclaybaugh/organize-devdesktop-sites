@@ -23,7 +23,7 @@ fs.readFile('/Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/data
 Review content and place in /Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/datamodel.xml`);
         }).catch((reason) => {
           console.log(reason);
-        })
+        });
     });
   }).catch((reason) => {
     console.log(reason);
@@ -32,35 +32,35 @@ Review content and place in /Applications/DevDesktop/Acquia Dev Desktop.app/Cont
 function swap(items, i, j) {
   let temp = items[i];
   items[i] = items[j];
-  items[j] = temp
+  items[j] = temp;
 }
 function partition(items, i, j) {
-  var pivot   = items[Math.floor((j + i) / 2)]; //middle element
+  let pivot   = items[Math.floor((j + i) / 2)];
   while (i <= j) {
-      while (items[i].name[0].localeCompare(pivot.name) < 0) {
-          i++;
-      }
-      while (items[j].name[0].localeCompare(pivot.name) > 0) {
-          j--;
-      }
-      if (i <= j) {
-          swap(items, i, j); //sawpping two elements
-          i++;
-          j--;
-      }
+    while (items[i].name[0].localeCompare(pivot.name) < 0) {
+      i++;
+    }
+    while (items[j].name[0].localeCompare(pivot.name) > 0) {
+      j--;
+    }
+    if (i <= j) {
+      swap(items, i, j);
+      i++;
+      j--;
+    }
   }
   return i;
 }
 function quicksort(items, left, right) {
-    var index;
-    if (items.length > 1) {
-        index = partition(items, left, right); //index returned from partition
-        if (left < index - 1) { //more elements on the left side of the pivot
-            quicksort(items, left, index - 1);
-        }
-        if (index < right) { //more elements on the right side of the pivot
-            quicksort(items, index, right);
-        }
+  let index;
+  if (items.length > 1) {
+    index = partition(items, left, right);
+    if (left < index - 1) {
+      quicksort(items, left, index - 1);
     }
-    return items;
+    if (index < right) {
+      quicksort(items, index, right);
+    }
+  }
+  return items;
 }
