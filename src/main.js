@@ -3,7 +3,9 @@ let xml2js = require('xml2js');
 
 let parser = new xml2js.Parser();
 let builder = new xml2js.Builder();
-fs.readFile('/Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/datamodel.xml')
+const datamodelPath = '/Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/datamodel.xml';
+
+fs.readFile(datamodelPath)
   .then((data) => {
     parser.parseString(data, (err, result) => {
       if (err) {
@@ -16,16 +18,19 @@ fs.readFile('/Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/data
         let sites = env.sites[0].item;
         quicksort(sites, 0, sites.length - 1);
       }
+
       let xml = builder.buildObject(result);
       fs.writeFile('datamodel.xml', xml)
         .then(() => {
           console.log(`XML written to datamodel.xml
-Review content and place in /Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/datamodel.xml`);
-        }).catch((reason) => {
+Review content and place in ` + datamodelPath);
+        })
+        .catch((reason) => {
           console.log(reason);
         });
     });
-  }).catch((reason) => {
+  })
+  .catch((reason) => {
     console.log(reason);
   });
 
