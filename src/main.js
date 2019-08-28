@@ -19,7 +19,8 @@ fs.readFile('/Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/data
       let xml = builder.buildObject(result);
       fs.writeFile('datamodel.xml', xml)
         .then(() => {
-          console.log('it worked!');
+          console.log(`XML written to datamodel.xml
+Review content and place in /Applications/DevDesktop/Acquia Dev Desktop.app/Contents/MacOS/datamodel.xml`);
         }).catch((reason) => {
           console.log(reason);
         })

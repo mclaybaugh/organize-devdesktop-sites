@@ -4,7 +4,8 @@
   "description": "Alpabetize items in XML file",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "node src/main.js"
   },
   "author": "mclaybaugh",
   "license": "MIT",
@@ -16,6 +17,6 @@
     "eslint-plugin-node": "^9.1.0"
   },
   "engines": {
-    "node": ">=12.9.1"
+    "node": ">=11.14.0"
   }
 }
