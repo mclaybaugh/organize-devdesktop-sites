@@ -10,5 +10,8 @@ To run:
 
 ```bash
 npm install
+# Generate alphabatized file
 npm run main
+# Backup old file to datamodel.xml.old, replace with new one
+./overwrite-datamodel.sh
 ```
